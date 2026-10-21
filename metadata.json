@@ -1,0 +1,6 @@
+{
+  "name": "Meridian Journal",
+  "description": "An editorial journal exploring architecture, resilient technology, deep ecology, and human culture through long-form essays.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
