@@ -15,6 +15,8 @@ import {
   BookOpen,
 } from 'lucide-react';
 import { Article, Comment, ReaderFont, ReaderFontSize, ReaderTheme } from '../types';
+import { EditorialImage } from './EditorialImage';
+import { AuthorAvatar } from './AuthorAvatar';
 
 interface ArticleDetailProps {
   article: Article;
@@ -377,11 +379,10 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
           {/* Author Card Row */}
           <div className={`pt-6 pb-6 border-t border-b ${borderClass} flex flex-wrap items-center justify-between gap-4`}>
             <div className="flex items-center gap-3.5">
-              <img
+              <AuthorAvatar
                 src={article.author.avatar}
-                alt={article.author.name}
-                referrerPolicy="no-referrer"
-                className="w-12 h-12 rounded-full object-cover border border-stone-300"
+                name={article.author.name}
+                size="lg"
               />
               <div>
                 <h3 className="text-sm font-semibold leading-tight">
@@ -409,11 +410,9 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
         {/* Featured Visual */}
         <figure className="mb-12">
           <div className="rounded-lg overflow-hidden border border-stone-300/80 bg-stone-200 aspect-[16/10] sm:aspect-[16/9]">
-            <img
+            <EditorialImage
               src={article.coverImage}
               alt={article.title}
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
             />
           </div>
           {article.imageCaption && (
@@ -504,11 +503,10 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
 
         {/* Author Detailed Bio */}
         <section className={`mt-14 p-6 sm:p-8 rounded-lg border ${borderClass} ${cardBgClass} flex flex-col sm:flex-row items-center sm:items-start gap-5`}>
-          <img
+          <AuthorAvatar
             src={article.author.avatar}
-            alt={article.author.name}
-            referrerPolicy="no-referrer"
-            className="w-16 h-16 rounded-full object-cover border border-stone-300 shrink-0"
+            name={article.author.name}
+            size="lg"
           />
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -666,11 +664,10 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
                   className={`p-4 rounded-lg border ${borderClass} hover:border-stone-400 cursor-pointer transition-colors bg-white dark:bg-stone-900/60 group`}
                 >
                   <div className="aspect-[16/10] overflow-hidden rounded mb-3 bg-stone-100">
-                    <img
+                    <EditorialImage
                       src={rel.coverImage}
                       alt={rel.title}
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="text-[11px] text-stone-500 uppercase tracking-wider mb-1">

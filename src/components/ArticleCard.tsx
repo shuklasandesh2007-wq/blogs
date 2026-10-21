@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowUpRight, Bookmark, Clock, Heart } from 'lucide-react';
 import { Article } from '../types';
+import { EditorialImage } from './EditorialImage';
+import { AuthorAvatar } from './AuthorAvatar';
 
 interface ArticleCardProps {
   article: Article;
@@ -23,11 +25,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           onClick={() => onSelectArticle(article)}
           className="relative overflow-hidden rounded-md mb-4 bg-stone-100 aspect-[16/10] cursor-pointer"
         >
-          <img
+          <EditorialImage
             src={article.coverImage}
             alt={article.title}
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
 
@@ -60,11 +61,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       {/* Footer */}
       <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img
+          <AuthorAvatar
             src={article.author.avatar}
-            alt={article.author.name}
-            referrerPolicy="no-referrer"
-            className="w-6 h-6 rounded-full object-cover border border-stone-200"
+            name={article.author.name}
+            size="sm"
           />
           <span className="text-xs text-stone-700 font-medium truncate max-w-[120px]">
             {article.author.name}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, PenTool, CheckCircle, Sparkles } from 'lucide-react';
 import { Article, Category } from '../types';
+import { ARTICLE_ASSETS } from '../data/articles';
 
 interface WriteArticleModalProps {
   isOpen: boolean;
@@ -42,10 +43,10 @@ export const WriteArticleModal: React.FC<WriteArticleModalProps> = ({
 
     // Choose default cover image matching category
     const categoryCoverMap: Record<string, string> = {
-      Architecture: '/src/assets/images/hero_editorial_journal_1792550307093.jpg',
-      Technology: '/src/assets/images/article_local_computing_1792550307532.jpg',
-      Ecology: '/src/assets/images/article_climate_architecture_1792550306007.jpg',
-      Culture: '/src/assets/images/article_soundscape_urban_1792550308033.jpg',
+      Architecture: ARTICLE_ASSETS.hero,
+      Technology: ARTICLE_ASSETS.localComputing,
+      Ecology: ARTICLE_ASSETS.climate,
+      Culture: ARTICLE_ASSETS.soundscape,
     };
 
     const newArticle: Article = {

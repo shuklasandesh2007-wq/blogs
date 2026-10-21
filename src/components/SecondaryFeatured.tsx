@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowUpRight, Bookmark, Clock } from 'lucide-react';
 import { Article } from '../types';
+import { EditorialImage } from './EditorialImage';
+import { AuthorAvatar } from './AuthorAvatar';
 
 interface SecondaryFeaturedProps {
   articles: Article[];
@@ -45,11 +47,10 @@ export const SecondaryFeatured: React.FC<SecondaryFeaturedProps> = ({
                     onClick={() => onSelectArticle(article)}
                     className="relative overflow-hidden rounded-md mb-5 bg-stone-100 aspect-[16/10] cursor-pointer"
                   >
-                    <img
+                    <EditorialImage
                       src={article.coverImage}
                       alt={article.title}
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                   </div>
 
@@ -82,11 +83,10 @@ export const SecondaryFeatured: React.FC<SecondaryFeaturedProps> = ({
                 {/* Footer with Author and Action */}
                 <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <img
+                    <AuthorAvatar
                       src={article.author.avatar}
-                      alt={article.author.name}
-                      referrerPolicy="no-referrer"
-                      className="w-7 h-7 rounded-full object-cover border border-stone-200"
+                      name={article.author.name}
+                      size="sm"
                     />
                     <span className="text-xs font-medium text-stone-800">
                       {article.author.name}

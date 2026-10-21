@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowRight, Bookmark, Clock, Eye } from 'lucide-react';
 import { Article } from '../types';
+import { EditorialImage } from './EditorialImage';
+import { AuthorAvatar } from './AuthorAvatar';
 
 interface HeroFeaturedProps {
   article: Article;
@@ -71,11 +73,10 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
             {/* Author Byline & Actions */}
             <div className="pt-6 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <img
+                <AuthorAvatar
                   src={article.author.avatar}
-                  alt={article.author.name}
-                  referrerPolicy="no-referrer"
-                  className="w-10 h-10 rounded-full object-cover border border-stone-300"
+                  name={article.author.name}
+                  size="md"
                 />
                 <div>
                   <h4 className="text-sm font-semibold text-stone-900 leading-tight">
@@ -120,11 +121,10 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
               className="group cursor-pointer block relative rounded-lg overflow-hidden bg-stone-200 border border-stone-300/80 shadow-md"
             >
               <div className="aspect-[16/10] sm:aspect-[16/11] lg:aspect-[4/3] overflow-hidden">
-                <img
+                <EditorialImage
                   src={article.coverImage}
                   alt={article.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">

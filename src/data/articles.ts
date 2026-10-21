@@ -1,4 +1,17 @@
 import { Article } from '../types';
+import heroImg from '../assets/images/hero_editorial_journal_1792550307093.jpg';
+import localCompImg from '../assets/images/article_local_computing_1792550307532.jpg';
+import climateImg from '../assets/images/article_climate_architecture_1792550306007.jpg';
+import deepReadingImg from '../assets/images/article_deep_reading_1792550307617.jpg';
+import soundscapeImg from '../assets/images/article_soundscape_urban_1792550308033.jpg';
+
+export const ARTICLE_ASSETS = {
+  hero: heroImg,
+  localComputing: localCompImg,
+  climate: climateImg,
+  deepReading: deepReadingImg,
+  soundscape: soundscapeImg,
+};
 
 export const INITIAL_ARTICLES: Article[] = [
   {
@@ -16,7 +29,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 18, 2026',
     readTime: '8 min read',
-    coverImage: '/src/assets/images/article_local_computing_1792550307532.jpg',
+    coverImage: localCompImg,
     imageCaption: 'Fig. 1 — Milled aluminum low-power sovereign node running quantized inference entirely off-grid.',
     featured: false,
     spotlight: true,
@@ -76,7 +89,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 16, 2026',
     readTime: '11 min read',
-    coverImage: '/src/assets/images/article_climate_architecture_1792550306007.jpg',
+    coverImage: climateImg,
     imageCaption: 'Fig. 2 — Six-story mass timber residential co-operative in Valencia utilizing terracotta solar chimneys and internal thermal cisterns.',
     featured: false,
     spotlight: true,
@@ -135,7 +148,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 14, 2026',
     readTime: '9 min read',
-    coverImage: '/src/assets/images/article_deep_reading_1792550307617.jpg',
+    coverImage: deepReadingImg,
     imageCaption: 'Fig. 3 — An afternoon inside the Duke Humfrey Library at Oxford. The physical book enforces a rhythmic solitude that screens systematically disrupt.',
     featured: false,
     spotlight: false,
@@ -190,7 +203,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 12, 2026',
     readTime: '12 min read',
-    coverImage: '/src/assets/images/hero_editorial_journal_1792550307093.jpg',
+    coverImage: heroImg,
     imageCaption: 'The Olympic Forest Reading Pavilion, designed with untreated Douglas fir louvers and honest board-formed concrete.',
     featured: true,
     spotlight: false,
@@ -249,7 +262,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 10, 2026',
     readTime: '10 min read',
-    coverImage: '/src/assets/images/article_soundscape_urban_1792550308033.jpg',
+    coverImage: soundscapeImg,
     imageCaption: 'Fig. 5 — Acoustic arches and dark basalt reflection pools installed at the Kyoto Civic Esplanade to attenuate high-frequency transit rumble.',
     featured: false,
     spotlight: false,
@@ -304,7 +317,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 08, 2026',
     readTime: '7 min read',
-    coverImage: '/src/assets/images/article_climate_architecture_1792550306007.jpg',
+    coverImage: climateImg,
     imageCaption: 'Fig. 6 — True integrated rhizosphere balconies with deep subsoil layers supporting diverse pollinator habitats in Zurich.',
     featured: false,
     spotlight: false,
@@ -352,7 +365,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 05, 2026',
     readTime: '8 min read',
-    coverImage: '/src/assets/images/article_deep_reading_1792550307617.jpg',
+    coverImage: deepReadingImg,
     imageCaption: 'Fig. 7 — Comparison of proportional modular scales from Tschichold’s canonical book proportions to modern fluid responsive typography.',
     featured: false,
     spotlight: false,
@@ -400,7 +413,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'October 02, 2026',
     readTime: '9 min read',
-    coverImage: '/src/assets/images/article_local_computing_1792550307532.jpg',
+    coverImage: localCompImg,
     imageCaption: 'Fig. 8 — Plaintext file structures and POSIX shell scripts running without modification on three generations of computing hardware.',
     featured: false,
     spotlight: false,
@@ -448,7 +461,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'September 28, 2026',
     readTime: '6 min read',
-    coverImage: '/src/assets/images/hero_editorial_journal_1792550307093.jpg',
+    coverImage: heroImg,
     imageCaption: 'Fig. 9 — Archival emulator workstation running reconstructed early 2000s hypermedia art collectives.',
     featured: false,
     spotlight: false,
@@ -496,7 +509,7 @@ export const INITIAL_ARTICLES: Article[] = [
     },
     publishedAt: 'September 24, 2026',
     readTime: '10 min read',
-    coverImage: '/src/assets/images/article_soundscape_urban_1792550308033.jpg',
+    coverImage: soundscapeImg,
     imageCaption: 'Fig. 10 — Civic assembly amphitheater and pedestrian fountain steps in Bologna, Italy.',
     featured: false,
     spotlight: false,

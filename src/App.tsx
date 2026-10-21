@@ -13,14 +13,21 @@ import { Article, Category, Comment } from './types';
 import { SlidersHorizontal, BookOpen, Sparkles, Filter } from 'lucide-react';
 
 export default function App() {
-  // Articles state with localStorage sync
+  // Articles state with localStorage sync and image path healing
   const [articles, setArticles] = useState<Article[]>(() => {
     try {
       const saved = localStorage.getItem('meridian_articles');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length >= INITIAL_ARTICLES.length) {
-          return parsed;
+          return parsed.map((item: Article) => {
+            // If an older session stored obsolete /src/ paths, heal with imported bundled asset
+            if (item.coverImage && typeof item.coverImage === 'string' && item.coverImage.startsWith('/src/')) {
+              const matched = INITIAL_ARTICLES.find((init) => init.id === item.id);
+              return matched ? { ...item, coverImage: matched.coverImage } : item;
+            }
+            return item;
+          });
         }
       }
     } catch {
